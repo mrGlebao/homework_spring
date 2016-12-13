@@ -16,7 +16,7 @@
         <constructor-arg type="ru.sbt.bit.ood.hw1.values.TradeFieldValues" ref="tradefieldvalues"/>
     </bean>
 
-    <bean id="job" class="ru.sbt.bit.ood.hw1.job.TradesJob">
+    <bean id="job" class="ru.sbt.bit.ood.hw1.job.TradesJob" init-method="run">
     </bean>
 
     <bean id="csvparser" class="ru.sbt.bit.ood.hw1.parsers.CsvParser">

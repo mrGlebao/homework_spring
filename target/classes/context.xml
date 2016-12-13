@@ -10,13 +10,13 @@
 
     <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
 
-    <bean id="dao" class="ru.sbt.bit.ood.hw1.TradesDAO"/>
+    <bean id="dao" class="ru.sbt.bit.ood.hw1.dao.TradesDAO"/>
 
     <bean id="trade" class="ru.sbt.bit.ood.hw1.Trade" scope="prototype">
-        <constructor-arg type="ru.sbt.bit.ood.hw1.TradeFieldValues" ref="tradefieldvalues"/>
+        <constructor-arg type="ru.sbt.bit.ood.hw1.values.TradeFieldValues" ref="tradefieldvalues"/>
     </bean>
 
-    <bean id="job" class="ru.sbt.bit.ood.hw1.TradesJob">
+    <bean id="job" class="ru.sbt.bit.ood.hw1.job.TradesJob" init-method="run">
     </bean>
 
     <bean id="csvparser" class="ru.sbt.bit.ood.hw1.parsers.CsvParser">
@@ -25,11 +25,11 @@
     <bean id="filedownloader" class="ru.sbt.bit.ood.hw1.downloaders.FileDownloader">
     </bean>
 
-    <bean id="tradefieldvalues" class = "ru.sbt.bit.ood.hw1.TradeFieldValues">
+    <bean id="tradefieldvalues" class = "ru.sbt.bit.ood.hw1.values.TradeFieldValues">
     </bean>
 
     <bean id="updater" class="ru.sbt.bit.ood.hw1.updaters.TradesUpdater">
-        <constructor-arg type="ru.sbt.bit.ood.hw1.TradesDAO" ref="dao"/>
+        <constructor-arg type="ru.sbt.bit.ood.hw1.dao.TradesDAO" ref="dao"/>
     </bean>
 
 </beans>

@@ -10,6 +10,5 @@ import ru.sbt.bit.ood.hw1.job.TradesJob;
 public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
-        TradesJob job = (TradesJob)context.getBean("job");
     }
 }
